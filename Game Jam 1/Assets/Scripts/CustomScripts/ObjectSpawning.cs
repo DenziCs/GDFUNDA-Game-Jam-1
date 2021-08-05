@@ -19,9 +19,9 @@ public class ObjectSpawning : MonoBehaviour
         else return false;
     }
 
-    private GameObject Spawn(GameObject templateObject, GameObject parent)
+    private GameObject Spawn(GameObject templateObject, Transform parentTransform)
     {
-        GameObject obj = GameObject.Instantiate(templateObject, parent.transform);
+        GameObject obj = GameObject.Instantiate(templateObject, parentTransform);
         obj.SetActive(true);
         return obj;
     }
@@ -34,7 +34,7 @@ public class ObjectSpawning : MonoBehaviour
             drawerIndex = (drawerIndex + 1) % (this.drawerList.Length);
         }
 
-        GameObject newItem = this.Spawn(itemReferenceList[Random.Range(0, itemReferenceList.Length)], drawerList[drawerIndex]);
+        GameObject newItem = this.Spawn(itemReferenceList[Random.Range(0, itemReferenceList.Length)], drawerList[drawerIndex].transform);
         Vector2 spawnPosition = drawerList[drawerIndex].transform.position;
         newItem.transform.position = spawnPosition;
         this.itemList.Add(newItem);
