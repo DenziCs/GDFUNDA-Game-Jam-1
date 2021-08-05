@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ObjectSpawning : MonoBehaviour
 {
-    [SerializeField] private GameObject[] referenceList;
+    [SerializeField] private GameObject[] itemReferenceList;
     [SerializeField] private GameObject[] drawerList;
     [SerializeField] private List<GameObject> itemList;
 
@@ -34,7 +34,7 @@ public class ObjectSpawning : MonoBehaviour
             drawerIndex = (drawerIndex + 1) % (this.drawerList.Length);
         }
 
-        GameObject newItem = this.Spawn(referenceList[Random.Range(0, referenceList.Length)], drawerList[drawerIndex]);
+        GameObject newItem = this.Spawn(itemReferenceList[Random.Range(0, itemReferenceList.Length)], drawerList[drawerIndex]);
         Vector2 spawnPosition = drawerList[drawerIndex].transform.position;
         newItem.transform.position = spawnPosition;
         this.itemList.Add(newItem);
@@ -57,7 +57,7 @@ public class ObjectSpawning : MonoBehaviour
         if (this.timer >= this.SPAWN_INTERVAL)
         {
             this.timer = 0.0f;
-            this.SpawnItemInDrawer();
+            if(this.itemList.Count < this.TOTAL_MAX) this.SpawnItemInDrawer();
         }
     }
 }

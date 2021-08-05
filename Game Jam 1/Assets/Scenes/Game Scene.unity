@@ -2363,7 +2363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80556f6dc3f85014c9b7085e3fa1abc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  referenceList:
+  itemReferenceList:
   - {fileID: 2038934913}
   - {fileID: 287449529}
   drawerList:
@@ -2372,6 +2372,8 @@ MonoBehaviour:
   - {fileID: 187822562}
   - {fileID: 634755657}
   - {fileID: 382043421}
+  studentReferenceList:
+  - {fileID: 2141925935}
   itemList: []
 --- !u!1 &989631522
 GameObject:
