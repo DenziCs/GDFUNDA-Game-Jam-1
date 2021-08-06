@@ -11,7 +11,7 @@ public class ObjectSpawning : MonoBehaviour
     
     private List<int> drawerCounts;
     private float timer = 0.0f;
-    private float SPAWN_INTERVAL = 5.0f;
+    private float SPAWN_INTERVAL = 20.0f;
     private int TOTAL_MAX = 16;
     private int DRAWER_MAX = 4;
 
@@ -46,7 +46,7 @@ public class ObjectSpawning : MonoBehaviour
         GameObject newItem = this.Spawn(this.itemReferenceList[itemIndex], drawerList[drawerIndex].transform);
         Vector2 spawnPosition = drawerList[drawerIndex].transform.position;
         spawnPosition.x += Random.Range(-2.0f, 2.0f);
-        spawnPosition.y += 0.3f; 
+        spawnPosition.y += 1.3f; 
 
         newItem.transform.position = spawnPosition;
         this.itemList.Add(newItem);

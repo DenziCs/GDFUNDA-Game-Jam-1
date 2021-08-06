@@ -9,8 +9,8 @@ public class StudentSpawning : MonoBehaviour
     [SerializeField] private GameObject speechBubble;
     [SerializeField] private GameObject[] descriptors;
 
-    private float maxPatience = 5.0f;
-    private float patience = 5.0f;
+    private float maxPatience = 20.0f;
+    private float patience = 20.0f;
     private float timer;
 
     private const float IN_POS_X = -100.0f;
