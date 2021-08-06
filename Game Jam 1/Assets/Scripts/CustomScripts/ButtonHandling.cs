@@ -8,7 +8,7 @@ public class ButtonHandling : MonoBehaviour
 
     private const float OPEN_POS_Y = 1.0f;
     private const float CLOSED_POS_Y = 9.0f;
-    private const float SPEED = 25.0f;
+    private const float SPEED = 20.0f;
 
     private GameObject activeDrawer = null;
     private bool isOpening = false;

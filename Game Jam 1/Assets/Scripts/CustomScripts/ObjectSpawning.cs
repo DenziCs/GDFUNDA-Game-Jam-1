@@ -43,12 +43,13 @@ public class ObjectSpawning : MonoBehaviour
             drawerIndex = (drawerIndex + 1) % (this.drawerList.Length);
         }
 
+        GameObject newItem = this.Spawn(this.itemReferenceList[itemIndex], drawerList[drawerIndex].transform);
         Vector2 spawnPosition = drawerList[drawerIndex].transform.position;
         spawnPosition.x += Random.Range(-2.0f, 2.0f);
         spawnPosition.y += 0.3f; 
 
-        this.itemReferenceList[itemIndex].transform.position = spawnPosition;
-        this.itemList.Add(this.itemReferenceList[itemIndex]);
+        newItem.transform.position = spawnPosition;
+        this.itemList.Add(newItem);
         this.drawerCounts[drawerIndex] += 1;
     }
 
