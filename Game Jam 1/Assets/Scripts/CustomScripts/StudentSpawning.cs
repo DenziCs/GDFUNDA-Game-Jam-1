@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StudentSpawning : MonoBehaviour
 {
     [SerializeField] private GameObject studentSprite;
+    [SerializeField] private GameObject speechBubble;
+    [SerializeField] private GameObject[] descriptors;
 
-    private float maxPatience = 5.0f;
-    private float patience = 5.0f;
+    private float maxPatience = 20.0f;
+    private float patience = 20.0f;
     private float timer;
 
     private const float IN_POS_X = -100.0f;
@@ -18,6 +21,8 @@ public class StudentSpawning : MonoBehaviour
     private bool isExiting = false;
     private bool isOccupied = false;
 
+    public GameObject currentObject = null;
+
     private void StudentEnter()
     {
         this.isEntering = true;
@@ -26,6 +31,13 @@ public class StudentSpawning : MonoBehaviour
     public void StudentExit()
     {
         this.isExiting = true;
+    }
+
+    private void ChooseItem()
+    {
+        int itemIndex = Random.Range(0, this.GetComponentInParent<ObjectSpawning>().itemList.Count);
+        if (this.currentObject == null) this.currentObject = this.GetComponentInParent<ObjectSpawning>().itemList[itemIndex];
+        Debug.Log(itemIndex);
     }
 
     void Start()
@@ -45,6 +57,8 @@ public class StudentSpawning : MonoBehaviour
         if(this.patience <= 0.0f)
         {
             this.patience = this.maxPatience;
+            this.speechBubble.SetActive(false);
+            this.currentObject = null;
             this.isOccupied = false;
             StudentExit();
         }
@@ -75,6 +89,11 @@ public class StudentSpawning : MonoBehaviour
             {
                 currentPos.x = IN_POS_X;
                 this.isOccupied = true;
+                this.ChooseItem();
+                this.speechBubble.SetActive(true);
+                this.descriptors[0].GetComponent<Text>().text = this.currentObject.GetComponent<ItemClass>().GeneralDescriptor;
+                this.descriptors[1].GetComponent<Text>().text = this.currentObject.GetComponent<ItemClass>().Specific1;
+                this.descriptors[2].GetComponent<Text>().text = this.currentObject.GetComponent<ItemClass>().Specific2;
                 this.isEntering = false;
             }
             this.studentSprite.transform.localPosition = currentPos;
