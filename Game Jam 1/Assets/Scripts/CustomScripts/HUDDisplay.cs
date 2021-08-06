@@ -26,13 +26,13 @@ public class HUDDisplay : MonoBehaviour
     public void AddScore()
     {
         this.score += 100;
-        this.scoreText.text = "SCORE: " + score;
+        this.scoreText.text = "" + score;
     }
 
     public void LoseLife()
     {
         this.life--;
-        this.lifeText.text = "STRIKES LEFT: " + life;
+        this.lifeText.text = "" + life;
         EventBroadcaster.Instance.PostEvent(EventNames.MP_Events.ON_LOSE_GAME);
     }
 }
