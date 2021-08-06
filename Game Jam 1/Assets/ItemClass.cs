@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class ItemClass
+public class ItemClass : MonoBehaviour
 {
+    public string Name;
     public int ID;
     public int drawerNumber;
     public string GeneralDescriptor;
