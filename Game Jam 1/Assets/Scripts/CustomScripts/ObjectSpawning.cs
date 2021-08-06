@@ -9,7 +9,7 @@ public class ObjectSpawning : MonoBehaviour
     [SerializeField] private GameObject[] drawerList;
     [SerializeField] public List<GameObject> itemList;
     
-    private List<GameObject>[] drawerContents = new List<GameObject>[this.drawerList.Length];
+    private List<int> drawerCounts;
     private float timer = 0.0f;
     private float SPAWN_INTERVAL = 5.0f;
     private int TOTAL_MAX = 16;
@@ -17,7 +17,7 @@ public class ObjectSpawning : MonoBehaviour
 
     private bool HasSpace(int drawerIndex)
     {
-        if (this.drawerContents[drawerIndex].Count < DRAWER_MAX) return true;
+        if (this.drawerCounts[drawerIndex] < DRAWER_MAX) return true;
         else return false;
     }
 
@@ -44,12 +44,12 @@ public class ObjectSpawning : MonoBehaviour
         }
 
         Vector2 spawnPosition = drawerList[drawerIndex].transform.position;
-        spawnPosition.x += Random.Range(-0.1f, 0.1f);
+        spawnPosition.x += Random.Range(-2.0f, 2.0f);
         spawnPosition.y += 0.3f; 
 
         this.itemReferenceList[itemIndex].transform.position = spawnPosition;
         this.itemList.Add(this.itemReferenceList[itemIndex]);
-        this.drawerContents[drawerIndex].Add(this.itemReferenceList[itemIndex]);
+        this.drawerCounts[drawerIndex] += 1;
     }
 
     private void SpawnJunkInDrawer(GameObject drawer)
@@ -57,7 +57,7 @@ public class ObjectSpawning : MonoBehaviour
         int junkIndex = Random.Range(0, junkReferenceList.Length);
         GameObject newJunk = this.Spawn(this.junkReferenceList[junkIndex], drawer.transform);
         Vector2 spawnPosition = drawer.transform.position;
-        spawnPosition.x += Random.Range(-0.1f, 0.1f);
+        spawnPosition.x += Random.Range(-2.0f, 2.0f);
         spawnPosition.y += 0.3f;
 
         newJunk.transform.position = spawnPosition;
@@ -66,7 +66,14 @@ public class ObjectSpawning : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for(int i = 0; i < this.itemReferenceList.Length; i++)
+        this.drawerCounts = new List<int>();
+
+        for (int i = 0; i < this.drawerList.Length; i++)
+        {
+            this.drawerCounts.Add(0);
+        }
+
+        for (int i = 0; i < this.itemReferenceList.Length; i++)
         {
             this.itemReferenceList[i].SetActive(false);
         }
