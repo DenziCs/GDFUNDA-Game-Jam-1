@@ -4,37 +4,28 @@ using UnityEngine;
 
 public class StudentSpawning : MonoBehaviour
 {
-    [SerializeField] private GameObject[] studentRefList;
+    [SerializeField] private GameObject studentSprite;
 
     private float maxPatience = 5.0f;
     private float patience = 5.0f;
     private float timer;
 
-    private const float IN_POS_X = -8.5f;
-    private const float OUT_POS_X = -0.5f;
-    private const float SPEED = 8.0f;
+    private const float IN_POS_X = -100.0f;
+    private const float OUT_POS_X = 320.0f;
+    private const float SPEED = 200.0f;
 
-    private GameObject activeStudent = null;
     private bool isEntering = false;
     private bool isExiting = false;
-
-    private GameObject Spawn(GameObject templateObject, Transform parentTransform)
-    {
-        GameObject obj = GameObject.Instantiate(templateObject, parentTransform);
-        obj.SetActive(true);
-        return obj;
-    }
+    private bool isOccupied = false;
 
     private void StudentEnter()
     {
-        if (this.activeStudent == null) {
-            int studentIndex = Random.Range(0, this.studentRefList.Length);
-            GameObject newStudent = this.Spawn(this.studentRefList[studentIndex], null);
-            Vector2 spawnPosition = this.studentRefList[studentIndex].transform.position;
-            newStudent.transform.position = spawnPosition;
-            this.activeStudent = newStudent;
-        }
         this.isEntering = true;
+    }
+
+    public void StudentExit()
+    {
+        this.isExiting = true;
     }
 
     void Start()
@@ -47,34 +38,27 @@ public class StudentSpawning : MonoBehaviour
     {
         if (!this.isExiting && !this.isEntering) 
         {
-            if (this.activeStudent == null) this.timer -= Time.deltaTime;
+            if (!this.isOccupied) this.timer -= Time.deltaTime;
             else this.patience -= Time.deltaTime;
         }
 
         if(this.patience <= 0.0f)
         {
             this.patience = this.maxPatience;
-            if(this.activeStudent != null)
-            {
-                this.isExiting = true;
-            }
+            this.isOccupied = false;
+            StudentExit();
         }
 
         if (this.isExiting)
         {
-            Vector2 currentPos = this.activeStudent.transform.position;
+            Vector2 currentPos = this.studentSprite.transform.localPosition;
             currentPos.x += SPEED * Time.deltaTime;
             if (currentPos.x >= OUT_POS_X)
             {
-                GameObject.Destroy(this.activeStudent);
-                this.activeStudent = null;
+                currentPos.x = -420.0f;
                 this.isExiting = false;
             }
-            if (this.activeStudent != null) this.activeStudent.transform.position = currentPos;
-            if (currentPos.x >= OUT_POS_X)
-            {
-                this.activeStudent = null;
-            }
+            this.studentSprite.transform.localPosition = currentPos;
         }
 
         if(this.timer <= 0.0f)
@@ -85,14 +69,15 @@ public class StudentSpawning : MonoBehaviour
 
         if (this.isEntering)
         {
-            Vector2 currentPos = this.activeStudent.transform.position;
+            Vector2 currentPos = this.studentSprite.transform.localPosition;
             currentPos.x += SPEED * Time.deltaTime;
             if (currentPos.x >= IN_POS_X)
             {
                 currentPos.x = IN_POS_X;
+                this.isOccupied = true;
                 this.isEntering = false;
             }
-            this.activeStudent.transform.position = currentPos;
+            this.studentSprite.transform.localPosition = currentPos;
         }
     }
 }
