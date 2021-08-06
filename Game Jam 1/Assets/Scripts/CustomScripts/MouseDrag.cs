@@ -15,7 +15,7 @@ public class MouseDrag : MonoBehaviour
         {
             Vector3 mousePos;
             mousePos = Input.mousePosition;
-            mousePos = Camera.main.ScreenToViewportPoint(mousePos);
+            mousePos = Camera.main.ScreenToWorldPoint(mousePos);
             this.gameObject.transform.localPosition = new Vector3(mousePos.x - startPosX, mousePos.y - startPosY, 40);
         }
     }
@@ -26,7 +26,7 @@ public class MouseDrag : MonoBehaviour
         {
             Vector3 mousePos;
             mousePos = Input.mousePosition;
-            mousePos = Camera.main.ScreenToViewportPoint(mousePos);
+            mousePos = Camera.main.ScreenToWorldPoint(mousePos);
 
             startPosX = mousePos.x - this.transform.localPosition.x;
             startPosY = mousePos.y - this.transform.localPosition.y;
