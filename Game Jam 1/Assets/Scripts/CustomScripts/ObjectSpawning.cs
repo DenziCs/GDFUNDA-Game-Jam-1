@@ -5,18 +5,27 @@ using UnityEngine;
 public class ObjectSpawning : MonoBehaviour
 {
     [SerializeField] private GameObject[] itemReferenceList;
+    [SerializeField] private GameObject[] junkReferenceList;
     [SerializeField] private GameObject[] drawerList;
-    [SerializeField] private List<GameObject> itemList;
-
+    [SerializeField] public List<GameObject> itemList;
+    
+    private List<GameObject>[] drawerContents = new List<GameObject>[this.drawerList.Length];
     private float timer = 0.0f;
     private float SPAWN_INTERVAL = 5.0f;
-    private int TOTAL_MAX = 35;
-    private int DRAWER_MAX = 10;
+    private int TOTAL_MAX = 16;
+    private int DRAWER_MAX = 4;
 
     private bool HasSpace(int drawerIndex)
     {
-        if (this.drawerList.Length < DRAWER_MAX) return true;
+        if (this.drawerContents[drawerIndex].Count < DRAWER_MAX) return true;
         else return false;
+    }
+
+    private GameObject Spawn(GameObject templateObject, Transform parentTransform)
+    {
+        GameObject obj = GameObject.Instantiate(templateObject, parentTransform);
+        obj.SetActive(true);
+        return obj;
     }
 
     private void SpawnItemInDrawer()
@@ -40,6 +49,18 @@ public class ObjectSpawning : MonoBehaviour
 
         this.itemReferenceList[itemIndex].transform.position = spawnPosition;
         this.itemList.Add(this.itemReferenceList[itemIndex]);
+        this.drawerContents[drawerIndex].Add(this.itemReferenceList[itemIndex]);
+    }
+
+    private void SpawnJunkInDrawer(GameObject drawer)
+    {
+        int junkIndex = Random.Range(0, junkReferenceList.Length);
+        GameObject newJunk = this.Spawn(this.junkReferenceList[junkIndex], drawer.transform);
+        Vector2 spawnPosition = drawer.transform.position;
+        spawnPosition.x += Random.Range(-0.1f, 0.1f);
+        spawnPosition.y += 0.3f;
+
+        newJunk.transform.position = spawnPosition;
     }
 
     // Start is called before the first frame update
@@ -50,9 +71,12 @@ public class ObjectSpawning : MonoBehaviour
             this.itemReferenceList[i].SetActive(false);
         }
 
-        for(int i = 0; i < 1; i++)
+        for(int i = 0; i < this.drawerList.Length; i++)
         {
-            this.SpawnItemInDrawer();
+            for(int j = 0; j < 6; j++)
+            {
+                this.SpawnJunkInDrawer(this.drawerList[i]);
+            }
         }
     }
 
