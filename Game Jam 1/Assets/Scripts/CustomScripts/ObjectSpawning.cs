@@ -68,11 +68,6 @@ public class ObjectSpawning : MonoBehaviour
     {
         this.drawerCounts = new List<int>();
 
-        for (int i = 0; i < this.drawerList.Length; i++)
-        {
-            this.drawerCounts.Add(0);
-        }
-
         for (int i = 0; i < this.itemReferenceList.Length; i++)
         {
             this.itemReferenceList[i].SetActive(false);
@@ -80,10 +75,16 @@ public class ObjectSpawning : MonoBehaviour
 
         for(int i = 0; i < this.drawerList.Length; i++)
         {
-            for(int j = 0; j < 6; j++)
+            this.drawerCounts.Add(0);
+            for (int j = 0; j < 6; j++)
             {
                 this.SpawnJunkInDrawer(this.drawerList[i]);
             }
+        }
+
+        for(int i = 0; i < 8; i++)
+        {
+            this.SpawnItemInDrawer();
         }
     }
 
