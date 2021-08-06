@@ -13,6 +13,8 @@ public class ButtonHandling : MonoBehaviour
     private GameObject activeDrawer = null;
     private bool isOpening = false;
     private bool isClosing = false;
+    Vector2 readyPosition;
+    Vector2 inactivePosition;
 
     public void OpenDrawer(GameObject drawer)
     {
@@ -22,6 +24,8 @@ public class ButtonHandling : MonoBehaviour
         }
 
         this.activeDrawer = drawer;
+        this.inactivePosition = drawer.transform.position;
+        this.activeDrawer.transform.position = this.readyPosition;
         this.isOpening = true;
     }
 
@@ -36,7 +40,13 @@ public class ButtonHandling : MonoBehaviour
         this.isClosing = true;
     }
 
-    private void Update()
+    private void Start()
+    {
+        readyPosition.x = 3.7f;
+        readyPosition.y = 9.0f;
+    }
+
+    void Update()
     {
         if (this.isOpening)
         {
@@ -60,11 +70,11 @@ public class ButtonHandling : MonoBehaviour
             currentPos.y += SPEED * Time.deltaTime;
             if (currentPos.y >= CLOSED_POS_Y)
             {
-                currentPos.y = CLOSED_POS_Y;
+                currentPos = this.inactivePosition;
                 this.isClosing = false;
             }
             this.activeDrawer.transform.position = currentPos;
-            if (currentPos.y >= CLOSED_POS_Y)
+            if (currentPos.y == this.inactivePosition.y)
             {
                 this.activeDrawer = null;
             }
