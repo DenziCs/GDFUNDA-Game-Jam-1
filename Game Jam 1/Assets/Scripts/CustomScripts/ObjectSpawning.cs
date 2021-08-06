@@ -57,10 +57,11 @@ public class ObjectSpawning : MonoBehaviour
     {
         for(int i = 0; i < this.itemList.Count; i++)
         {
-            if(this.itemList[i] == item)
+            if(this.itemList[i] == item)    // Needs to be replaced with an ID check
             {
                 this.drawerCounts[drawerIndex] -= 1;
-
+                GameObject.Destroy(item);
+                this.itemList[i].SetActive(false);
             }
         }
     }
