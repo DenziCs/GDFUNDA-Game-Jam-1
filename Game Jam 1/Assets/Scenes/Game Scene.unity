@@ -1711,7 +1711,7 @@ GameObject:
   - component: {fileID: 382199606}
   - component: {fileID: 382199605}
   m_Layer: 0
-  m_Name: Dummy Object 2 (7)
+  m_Name: Phone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6496,7 +6496,7 @@ GameObject:
   - component: {fileID: 1314401294}
   - component: {fileID: 1314401293}
   m_Layer: 0
-  m_Name: Dummy Object 1 (8)
+  m_Name: Plate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
