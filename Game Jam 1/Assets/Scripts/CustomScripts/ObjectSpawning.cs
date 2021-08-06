@@ -46,10 +46,9 @@ public class ObjectSpawning : MonoBehaviour
         GameObject newItem = this.Spawn(this.itemReferenceList[itemIndex], drawerList[drawerIndex].transform);
         Vector2 spawnPosition = drawerList[drawerIndex].transform.position;
         spawnPosition.x += Random.Range(-2.0f, 2.0f);
-        spawnPosition.y += 1.3f;
+        spawnPosition.y += 1.3f; 
 
         newItem.transform.position = spawnPosition;
-        newItem.GetComponent<ItemClass>().drawerNumber = drawerIndex;
         this.itemList.Add(newItem);
         this.drawerCounts[drawerIndex] += 1;
     }
