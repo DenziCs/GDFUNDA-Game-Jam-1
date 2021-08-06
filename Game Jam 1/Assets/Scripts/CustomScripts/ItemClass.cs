@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class ItemClass
+public class ItemClass : MonoBehaviour
 {
     public int ID;
     public int drawerNumber;
