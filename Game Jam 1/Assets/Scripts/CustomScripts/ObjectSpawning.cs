@@ -52,6 +52,18 @@ public class ObjectSpawning : MonoBehaviour
         this.drawerCounts[drawerIndex] += 1;
     }
 
+    public void RemoveItemFromDrawer(GameObject item, int drawerIndex)
+    {
+        for(int i = 0; i < this.itemList.Count; i++)
+        {
+            if(this.itemList[i] == item)
+            {
+                this.drawerCounts[drawerIndex] -= 1;
+
+            }
+        }
+    }
+
     private void SpawnJunkInDrawer(GameObject drawer)
     {
         int junkIndex = Random.Range(0, junkReferenceList.Length);
