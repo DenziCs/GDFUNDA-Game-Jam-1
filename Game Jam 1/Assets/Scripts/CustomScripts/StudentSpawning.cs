@@ -58,6 +58,7 @@ public class StudentSpawning : MonoBehaviour
         {
             this.patience = this.maxPatience;
             this.speechBubble.SetActive(false);
+            this.currentObject = null;
             this.isOccupied = false;
             StudentExit();
         }
@@ -88,13 +89,14 @@ public class StudentSpawning : MonoBehaviour
             {
                 currentPos.x = IN_POS_X;
                 this.isOccupied = true;
+                this.ChooseItem();
+                this.speechBubble.SetActive(true);
+                this.descriptors[0].GetComponent<Text>().text = this.currentObject.GetComponent<ItemClass>().GeneralDescriptor;
+                this.descriptors[1].GetComponent<Text>().text = this.currentObject.GetComponent<ItemClass>().Specific1;
+                this.descriptors[2].GetComponent<Text>().text = this.currentObject.GetComponent<ItemClass>().Specific2;
                 this.isEntering = false;
             }
             this.studentSprite.transform.localPosition = currentPos;
-
-            this.ChooseItem();
-            this.descriptors[0].GetComponent<Text>().text = this.currentObject.GetComponent<ItemClass>().GeneralDescriptor;
-            this.speechBubble.SetActive(true);
         }
     }
 }

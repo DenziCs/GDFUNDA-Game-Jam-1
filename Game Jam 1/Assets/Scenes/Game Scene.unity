@@ -5488,7 +5488,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   studentSprite: {fileID: 2109033915}
-  speechBubble: {fileID: 0}
+  speechBubble: {fileID: 1270612220}
+  descriptors:
+  - {fileID: 1714149792}
+  - {fileID: 1741167877}
+  - {fileID: 67415939}
   currentObject: {fileID: 0}
 --- !u!114 &946875291
 MonoBehaviour:
@@ -10377,7 +10381,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -100, y: -47}
+  m_AnchoredPosition: {x: -420, y: -47}
   m_SizeDelta: {x: 242, y: 385}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2109033917
