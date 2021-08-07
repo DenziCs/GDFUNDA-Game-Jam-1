@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game Scene.unity
     guid: ded7205635e871a49bf4e7972458ddae
+  - enabled: 1
+    path: Assets/Scenes/Pink Slip Scene.unity
+    guid: e86df9c201e15c34b9e2d06770c44635
   m_configObjects: {}
