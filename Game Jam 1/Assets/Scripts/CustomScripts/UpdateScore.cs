@@ -10,7 +10,6 @@ public class UpdateScore : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.scoreDisplay.text = "test";
-        this.scoreDisplay.text = ScoreStorage.score.ToString();
+        this.scoreDisplay.text = UpdateUI.totalScore.ToString();
     }
 }
