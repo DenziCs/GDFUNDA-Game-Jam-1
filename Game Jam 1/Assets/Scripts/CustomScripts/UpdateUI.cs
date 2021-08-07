@@ -10,6 +10,9 @@ public class UpdateUI : MonoBehaviour
     [SerializeField] private Text selectedItemDisplay;
     [SerializeField] private Text patienceDisplay;
 
+    [SerializeField] private GameObject pinkSlip;
+    [SerializeField] private Text finalScoreDisplay;
+
     int currentScore = 0;
     int currentStrikeCount = 3;
 
@@ -33,5 +36,19 @@ public class UpdateUI : MonoBehaviour
     public void UpdatePatience(int patience)
     {
         this.patienceDisplay.text = patience.ToString();
+    }
+
+    private void UpdatePinkSlip()
+    {
+        this.pinkSlip.SetActive(true);
+        this.finalScoreDisplay.text = this.currentScore.ToString();
+    }
+
+    void Update()
+    {
+        if(this.currentStrikeCount == 0)
+        {
+            UpdatePinkSlip();
+        }
     }
 }
