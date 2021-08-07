@@ -4670,7 +4670,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 743738338}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 946875292}
+        m_TargetAssemblyTypeName: ItemSelectionHandling, Assembly-CSharp
+        m_MethodName: GiveItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &743738338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5773,6 +5785,7 @@ GameObject:
   - component: {fileID: 946875291}
   - component: {fileID: 946875293}
   - component: {fileID: 946875292}
+  - component: {fileID: 946875294}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -5913,7 +5926,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cad127e9c825a5346b55ee313f865038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectionLabel: {fileID: 1664714548}
   selectedItem: {fileID: 0}
 --- !u!114 &946875293
 MonoBehaviour:
@@ -5928,6 +5940,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AllowSwitchOff: 1
+--- !u!114 &946875294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 946875285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c6d5c6866c5a8a44a9c6806238e6d25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreDisplay: {fileID: 164495746}
+  strikeCountDisplay: {fileID: 2015904945}
+  selectedItemDisplay: {fileID: 1664714548}
 --- !u!1 &951023228
 GameObject:
   m_ObjectHideFlags: 0

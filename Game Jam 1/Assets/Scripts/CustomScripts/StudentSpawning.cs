@@ -28,9 +28,30 @@ public class StudentSpawning : MonoBehaviour
         this.isEntering = true;
     }
 
-    public void StudentExit()
+    private void StudentExit()
     {
+        this.speechBubble.SetActive(false);
+        this.currentObject = null;
+        this.isOccupied = false;
         this.isExiting = true;
+    }
+
+    public void ReceiveItem(GameObject item)
+    {
+        if (item.GetComponent<ItemClass>() != null)
+        {
+            if (item.GetComponent<ItemClass>().ID == currentObject.GetComponent<ItemClass>().ID)
+            {
+                int bonusPoints = (int)((this.patience / this.maxPatience) * 100);
+                this.GetComponentInParent<UpdateUI>().UpdateScore(100 + bonusPoints);
+                this.patience = this.maxPatience;
+                this.StudentExit();
+            }
+
+            else this.patience -= 5.0f;
+        }
+
+        else this.patience -= 5.0f;
     }
 
     private void ChooseItem()
@@ -57,9 +78,7 @@ public class StudentSpawning : MonoBehaviour
         if(this.patience <= 0.0f)
         {
             this.patience = this.maxPatience;
-            this.speechBubble.SetActive(false);
-            this.currentObject = null;
-            this.isOccupied = false;
+            this.GetComponentInParent<UpdateUI>().UpdateStrikeCount();
             StudentExit();
         }
 
