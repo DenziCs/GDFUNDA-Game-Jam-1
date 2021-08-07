@@ -12,7 +12,7 @@ public class ItemSelectionHandling : MonoBehaviour
     public void SelectItem(GameObject item)
     {
         this.selectedItem = item;
-        this.selectionLabel.text = item.name;
+        this.selectionLabel.text = item.GetComponent<ItemClass>().itemName;
     }
 
     public void DeselectItem()

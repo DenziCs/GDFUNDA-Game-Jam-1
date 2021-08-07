@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class ItemClass : MonoBehaviour
 {
+    public string itemName;
     public int ID;
     public int drawerNumber;
     public string GeneralDescriptor;

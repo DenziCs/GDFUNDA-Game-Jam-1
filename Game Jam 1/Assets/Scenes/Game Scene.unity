@@ -390,6 +390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cee5f129db3cd44d883f942a6072183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: WALLET
   ID: 21
   drawerNumber: 0
   GeneralDescriptor: Rectangular
@@ -1140,6 +1141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cee5f129db3cd44d883f942a6072183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: CHARGER
   ID: 7
   drawerNumber: 0
   GeneralDescriptor: Long
@@ -1986,6 +1988,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cee5f129db3cd44d883f942a6072183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: PS5 BOX
   ID: 1
   drawerNumber: 0
   GeneralDescriptor: Rectangular
@@ -2236,6 +2239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cee5f129db3cd44d883f942a6072183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: PHONE
   ID: 15
   drawerNumber: 0
   GeneralDescriptor: Rectangular
@@ -2399,6 +2403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cee5f129db3cd44d883f942a6072183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: WATER BOTTLE
   ID: 22
   drawerNumber: 0
   GeneralDescriptor: Hard
@@ -3763,6 +3768,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cee5f129db3cd44d883f942a6072183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: APPLE
   ID: 2
   drawerNumber: 0
   GeneralDescriptor: Round
@@ -3954,6 +3960,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cee5f129db3cd44d883f942a6072183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: SCISSORS
   ID: 19
   drawerNumber: 0
   GeneralDescriptor: Sharp
@@ -4860,6 +4867,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cee5f129db3cd44d883f942a6072183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: CRYSTAL BALL
   ID: 9
   drawerNumber: 0
   GeneralDescriptor: Round
@@ -5184,6 +5192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cee5f129db3cd44d883f942a6072183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: BROOM
   ID: 4
   drawerNumber: 0
   GeneralDescriptor: Hard
@@ -6378,6 +6387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cee5f129db3cd44d883f942a6072183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: CALCULATOR
   ID: 6
   drawerNumber: 0
   GeneralDescriptor: Rectangular
@@ -6750,6 +6760,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cee5f129db3cd44d883f942a6072183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: PEN
   ID: 13
   drawerNumber: 0
   GeneralDescriptor: Small
@@ -7045,6 +7056,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cee5f129db3cd44d883f942a6072183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: CAKE
   ID: 5
   drawerNumber: 0
   GeneralDescriptor: Soft
@@ -7411,6 +7423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cee5f129db3cd44d883f942a6072183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: PLATE
   ID: 16
   drawerNumber: 0
   GeneralDescriptor: Round
@@ -7852,6 +7865,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cee5f129db3cd44d883f942a6072183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: SAW
   ID: 18
   drawerNumber: 0
   GeneralDescriptor: Sharp
@@ -8233,6 +8247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cee5f129db3cd44d883f942a6072183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: PET ROCK
   ID: 14
   drawerNumber: 0
   GeneralDescriptor: Hard
@@ -8528,6 +8543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cee5f129db3cd44d883f942a6072183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: ANVIL
   ID: 3
   drawerNumber: 0
   GeneralDescriptor: Hard
@@ -8994,6 +9010,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cee5f129db3cd44d883f942a6072183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: '[REDACTED]'
   ID: 20
   drawerNumber: 0
   GeneralDescriptor: Round
@@ -9157,6 +9174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cee5f129db3cd44d883f942a6072183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: KATANA
   ID: 11
   drawerNumber: 0
   GeneralDescriptor: Sharp
@@ -9647,6 +9665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cee5f129db3cd44d883f942a6072183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: PROTRACTOR
   ID: 17
   drawerNumber: 0
   GeneralDescriptor: Small
@@ -9810,6 +9829,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cee5f129db3cd44d883f942a6072183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: METERSTICK
   ID: 12
   drawerNumber: 0
   GeneralDescriptor: Long
@@ -9999,6 +10019,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cee5f129db3cd44d883f942a6072183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: HOODIE
   ID: 10
   drawerNumber: 0
   GeneralDescriptor: Soft
@@ -10547,6 +10568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cee5f129db3cd44d883f942a6072183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: BASKETBALL
   ID: 0
   drawerNumber: 0
   GeneralDescriptor: Round
@@ -10800,6 +10822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cee5f129db3cd44d883f942a6072183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: COOKIE
   ID: 8
   drawerNumber: 0
   GeneralDescriptor: Round
