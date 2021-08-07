@@ -10,6 +10,9 @@ public class GameOver : MonoBehaviour
     [SerializeField] private Text finalScoreDisplay;
 
     private int score;
+    private bool isOver = false;
+    private bool isPrinting = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,19 +22,25 @@ public class GameOver : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (isPrinting)
+        {
+            Vector2 currentPos = this.pinkSlip.transform.localPosition;
+            currentPos.y -= 100.0f * Time.deltaTime;
+            if (currentPos.y <= 0.0f)
+            {
+                currentPos.y = 0.0f;
+                this.isPrinting = false;
+            }
+            this.pinkSlip.transform.localPosition = currentPos;
+        }
     }
 
     void LoseGame()
     {
-<<<<<<< HEAD
-        score = this.GetComponent<UpdateUI>().currentScore;
+        this.isOver = true;
+        this.score = this.GetComponentInParent<UpdateUI>().currentScore;
         this.pinkSlip.SetActive(true);
         this.finalScoreDisplay.text = this.score.ToString();
-=======
-        this.pinkSlip.SetActive(true);
-        // this.finalScoreDisplay.text = this.currentScore.ToString();
-        SceneManager.LoadScene("Main Menu");
->>>>>>> parent of 924f1c6 (Updated the GameOver script to animate the pink slip.)
+        this.isPrinting = true;
     }
 }
