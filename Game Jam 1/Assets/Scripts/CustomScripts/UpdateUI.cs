@@ -10,7 +10,7 @@ public class UpdateUI : MonoBehaviour
     [SerializeField] private Text selectedItemDisplay;
     [SerializeField] private Text patienceDisplay;
 
-
+    public static int totalScore;
     public int currentScore = 0;
     public int currentStrikeCount = 3;
 
