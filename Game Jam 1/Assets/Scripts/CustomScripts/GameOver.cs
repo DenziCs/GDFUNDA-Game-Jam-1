@@ -17,8 +17,3 @@ public class GameOver : MonoBehaviour
         SceneManager.LoadScene("Pink Slip Scene");
     }
 }
-
-public class ScoreStorage
-{
-    public static int score = 0;
-}
