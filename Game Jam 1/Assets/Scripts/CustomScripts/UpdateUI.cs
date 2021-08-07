@@ -10,11 +10,9 @@ public class UpdateUI : MonoBehaviour
     [SerializeField] private Text selectedItemDisplay;
     [SerializeField] private Text patienceDisplay;
 
-    [SerializeField] private GameObject pinkSlip;
-    [SerializeField] private Text finalScoreDisplay;
 
-    int currentScore = 0;
-    int currentStrikeCount = 3;
+    public int currentScore = 0;
+    public int currentStrikeCount = 3;
 
     public void UpdateScore(int scoreAddend)
     {
@@ -38,17 +36,11 @@ public class UpdateUI : MonoBehaviour
         this.patienceDisplay.text = patience.ToString();
     }
 
-    private void UpdatePinkSlip()
-    {
-        this.pinkSlip.SetActive(true);
-        this.finalScoreDisplay.text = this.currentScore.ToString();
-    }
-
     void Update()
     {
         if(this.currentStrikeCount == 0)
         {
-            UpdatePinkSlip();
+            EventBroadcaster.Instance.PostEvent(EventNames.MP_Events.ON_LOSE_GAME);
         }
     }
 }
