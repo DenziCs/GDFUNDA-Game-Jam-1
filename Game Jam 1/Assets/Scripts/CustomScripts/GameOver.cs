@@ -24,8 +24,14 @@ public class GameOver : MonoBehaviour
 
     void LoseGame()
     {
+<<<<<<< HEAD
         score = this.GetComponent<UpdateUI>().currentScore;
         this.pinkSlip.SetActive(true);
         this.finalScoreDisplay.text = this.score.ToString();
+=======
+        this.pinkSlip.SetActive(true);
+        // this.finalScoreDisplay.text = this.currentScore.ToString();
+        SceneManager.LoadScene("Main Menu");
+>>>>>>> parent of 924f1c6 (Updated the GameOver script to animate the pink slip.)
     }
 }
