@@ -54,6 +54,7 @@ public class EventNames {
 	public class MP_Events
     {
 		public const string ON_LOSE_GAME = "ON_LOSE_GAME";
+		public const string ON_ITEM_SELECT = "ON_ITEM_SELECT";
     }
 }
 

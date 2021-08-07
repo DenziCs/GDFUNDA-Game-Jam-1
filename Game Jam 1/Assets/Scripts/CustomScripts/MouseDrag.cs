@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class MouseDrag : MonoBehaviour
 {
-    [SerializeField] private ItemSelectionHandling selectionScript;
-
     private float startPosX;
     private float startPosY;
     private bool isBeingHeld = false;
@@ -33,7 +31,6 @@ public class MouseDrag : MonoBehaviour
             startPosX = mousePos.x - this.transform.localPosition.x;
             startPosY = mousePos.y - this.transform.localPosition.y;
 
-            selectionScript.SelectItem(this.gameObject);
             isBeingHeld = true;
         }
 
