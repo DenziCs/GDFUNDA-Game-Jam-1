@@ -43,6 +43,7 @@ public class StudentSpawning : MonoBehaviour
             if (item.GetComponent<ItemClass>().ID == currentObject.GetComponent<ItemClass>().ID)
             {
                 this.GetComponentInParent<ObjectSpawning>().RemoveItemFromDrawer(item, item.GetComponent<ItemClass>().drawerNumber);
+                this.GetComponentInParent<UpdateUI>().UpdateSelectedItem("---");
                 int bonusPoints = (int)((this.patience / this.maxPatience) * 100);
                 this.GetComponentInParent<UpdateUI>().UpdateScore(100 + bonusPoints);
                 this.patience = this.maxPatience;
