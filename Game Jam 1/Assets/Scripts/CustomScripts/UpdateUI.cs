@@ -40,6 +40,7 @@ public class UpdateUI : MonoBehaviour
     {
         if(this.currentStrikeCount == 0)
         {
+            totalScore = this.currentScore;
             EventBroadcaster.Instance.PostEvent(EventNames.MP_Events.ON_LOSE_GAME);
         }
     }
