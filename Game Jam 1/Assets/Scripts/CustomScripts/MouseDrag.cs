@@ -33,7 +33,7 @@ public class MouseDrag : MonoBehaviour
             startPosX = mousePos.x - this.transform.localPosition.x;
             startPosY = mousePos.y - this.transform.localPosition.y;
 
-            selectionScript.selectedItem = this.gameObject;
+            selectionScript.SelectItem(this.gameObject);
             isBeingHeld = true;
         }
 
