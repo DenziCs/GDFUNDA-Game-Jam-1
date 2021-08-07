@@ -24,8 +24,7 @@ public class GameOver : MonoBehaviour
 
     void LoseGame()
     {
-
-        SceneManager.LoadScene("Main Menu");
+        score = this.GetComponent<UpdateUI>().currentScore;
         this.pinkSlip.SetActive(true);
         this.finalScoreDisplay.text = this.score.ToString();
     }
