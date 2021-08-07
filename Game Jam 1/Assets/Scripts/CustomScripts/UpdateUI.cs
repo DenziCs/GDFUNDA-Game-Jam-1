@@ -8,6 +8,7 @@ public class UpdateUI : MonoBehaviour
     [SerializeField] private Text scoreDisplay;
     [SerializeField] private Text strikeCountDisplay;
     [SerializeField] private Text selectedItemDisplay;
+    [SerializeField] private Text patienceDisplay;
 
     int currentScore = 0;
     int currentStrikeCount = 3;
@@ -27,5 +28,10 @@ public class UpdateUI : MonoBehaviour
     public void UpdateSelectedItem(string itemName)
     {
         this.selectedItemDisplay.text = itemName;
+    }
+
+    public void UpdatePatience(int patience)
+    {
+        this.patienceDisplay.text = patience.ToString();
     }
 }

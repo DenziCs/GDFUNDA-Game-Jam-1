@@ -42,6 +42,7 @@ public class StudentSpawning : MonoBehaviour
         {
             if (item.GetComponent<ItemClass>().ID == currentObject.GetComponent<ItemClass>().ID)
             {
+                this.GetComponentInParent<ObjectSpawning>().RemoveItemFromDrawer(item, item.GetComponent<ItemClass>().drawerNumber);
                 int bonusPoints = (int)((this.patience / this.maxPatience) * 100);
                 this.GetComponentInParent<UpdateUI>().UpdateScore(100 + bonusPoints);
                 this.patience = this.maxPatience;
@@ -73,6 +74,11 @@ public class StudentSpawning : MonoBehaviour
         {
             if (!this.isOccupied) this.timer -= Time.deltaTime;
             else this.patience -= Time.deltaTime;
+        }
+
+        if (this.speechBubble.activeSelf)
+        {
+            this.GetComponentInParent<UpdateUI>().UpdatePatience((int)patience);
         }
 
         if(this.patience <= 0.0f)
