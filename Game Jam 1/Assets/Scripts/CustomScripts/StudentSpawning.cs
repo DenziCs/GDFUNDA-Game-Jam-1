@@ -86,6 +86,7 @@ public class StudentSpawning : MonoBehaviour
         {
             this.patience = this.maxPatience;
             this.GetComponentInParent<UpdateUI>().UpdateStrikeCount();
+            this.GetComponentInParent<UpdateUI>().UpdateSelectedItem("---");
             StudentExit();
         }
 
