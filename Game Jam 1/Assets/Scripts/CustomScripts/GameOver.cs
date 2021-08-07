@@ -5,9 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameOver : MonoBehaviour
-{
-    private int score;
-    
+{    
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +14,11 @@ public class GameOver : MonoBehaviour
 
     void LoseGame()
     {
-        SceneManager.LoadScene("Main Menu");
+        SceneManager.LoadScene("Pink Slip Scene");
     }
+}
+
+public class ScoreStorage
+{
+    public static int score = 0;
 }
